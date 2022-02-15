@@ -1,15 +1,15 @@
 from __future__ import absolute_import
 from __future__ import print_function
-from keras.layers import *
-from keras.layers import Input
-from keras.layers.core import Activation, Reshape
-from keras.layers import Conv2D, MaxPooling2D, UpSampling2D, SeparableConv2D
-from keras.layers.normalization import BatchNormalization
-from keras.models import Model
+from tensorflow.compat.v1.keras.layers import *
+from tensorflow.compat.v1.keras import Input
+from tensorflow.compat.v1.keras.layers import Activation, Reshape
+from tensorflow.compat.v1.keras.layers import Conv2D, MaxPooling2D, UpSampling2D, SeparableConv2D
+from tensorflow.compat.v1.keras.layers import BatchNormalization
+from tensorflow.compat.v1.keras.models import Model
 import parameters as para
-from keras.applications.imagenet_utils import _obtain_input_shape
-from keras import backend as K
-from keras.engine.topology import get_source_inputs
+from keras_applications.imagenet_utils import _obtain_input_shape
+from tensorflow.compat.v1.keras import backend as K
+from tensorflow.compat.v1.keras.utils import get_source_inputs
 
 
 def dense_block(x, blocks, name):
