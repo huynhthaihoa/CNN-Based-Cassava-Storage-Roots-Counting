@@ -1,7 +1,7 @@
 from keras.callbacks import *
 import matplotlib.pyplot as plt
 import parameters as para
-from Models import smallVGGnet, densenet, densenet_lite
+from Models import densenet, densenet_lite#, smallVGGnet 
 import numpy as np
 from utils.memory_usage import memory_usage
 import dataset_utils
@@ -13,9 +13,9 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from keras.preprocessing.image import ImageDataGenerator
 
 if __name__ == '__main__':
-    config = tf.ConfigProto()
+    config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
-    session = tf.Session(config=config)
+    session = tf.compat.v1.Session(config=config)
 
     if para.model_type == "smallVGGnet":
         print('Initialising smallVGGnet ...')
